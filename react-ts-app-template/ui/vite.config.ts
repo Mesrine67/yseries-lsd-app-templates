@@ -3,12 +3,13 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    plugins: [react()],
     base: './',
-    define: {
-        global: 'window'
-    },
     build: {
         sourcemap: false
+    },
+    define: {
+        global: 'window'
     },
     optimizeDeps: {
         esbuildOptions: {
@@ -20,5 +21,4 @@ export default defineConfig({
         port: 3000,
         open: true
     },
-    plugins: [react()],
 });
